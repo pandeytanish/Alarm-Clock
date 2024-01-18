@@ -4,26 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alarm Clock</title>
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        #alarmTime {
-            margin-right: 10px;
-        }
-
-        #setAlarmButton {
-            cursor: pointer;
-            padding: 8px 12px;
-            font-size: 16px;
-        }
-    </style>
 </head>
 <body>
 
@@ -31,26 +13,9 @@
     <input type="time" id="alarmTime" required>
     <button id="setAlarmButton">Set Alarm</button>
 
-    <script>
-        document.getElementById('setAlarmButton').addEventListener('click', function() {
-            var alarmTime = document.getElementById('alarmTime').value;
+    <div id="clock"></div>
 
-            if (alarmTime) {
-                setInterval(function() {
-                    var currentTime = new Date();
-                    var hours = currentTime.getHours();
-                    var minutes = currentTime.getMinutes();
-                    var currentTimeString = hours + ":" + minutes;
-
-                    if (currentTimeString === alarmTime) {
-                        alert("Alarm ring");
-                    }
-                }, 1000);
-            } else {
-                alert("Please enter a valid time");
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
